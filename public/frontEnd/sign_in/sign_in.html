@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="./sign_in.css" type="text/css">
+    <script src="./sign_in.js" defer></script>
+</head>
+<body>
+    
+    <div class="sign_in_container" id="sign_in_container">
+        <div class="inner_div">
+            <form action="" method="post">
+                <div class="email_container">
+                    <label for="email"><p>email</p></label>
+                    <input type="text" id="email" name="email">
+                </div> 
+                <div class="password_container">
+                    <label for="password"><p>password</p></label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="sign_in_btn">
+                    <button type="submit" id="sign_in">sign in</button>
+                </div>
+            </form>
+            <div class="container1"><p>if you don't have an account?</p></div>
+            <div class="container2">
+                <a href="../sign_up/signUp.html">sign up</a>
+                <button type="button" id="signIn_frgt_btn">forget password</button>
+            </div>  
+        </div>
+    </div>
+
+    <!-- forget password -->
+    <div class="forget_pswd_container" id="forget_pswd_container">
+        <div class="inner_div">
+            <form action="" method="post">
+                <div class="email_container">
+                    <label for="rcvry_email"><p>email</p></label>
+                    <input type="text" id="rcvry_email" name="email">
+                </div> 
+                <div class="sign_in_btn">
+                    <button type="submit" id="forget_pswd">forget password</button>
+                </div>
+            </form>
+            <div class="container2">
+                <a href="../sing_in/sign_in.html">sign in</a>
+            </div>  
+        </div>
+    </div>
+    
+    <!-- user inter profile -->
+    <div class="profile_container" id="profile_container">
+        <header>
+            <div class="expense_tracker" id="expense_tracker">
+                <button id="daily_btn">DAILY</button>
+                <button id="view_expenses">VIEW ALL</button>
+                <button id="add_expense">Add Expense</button>
+                <button id="pay_btn">PAY</button>
+            </div>
+            <div class="main_header">
+                <p>EXPENSE TRACKER</p>
+            </div>
+            <div class="profile">
+                <div class="profile_pic">
+                    <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+            </div>
+        </header>
+
+        <!-- daily expenses tracker -->
+        <div class="expenses_main_container" id="expenses_main_container">
+            <div class="daily_expenses_container">
+                <div class="expenses_header">Expenses</div>
+                <div class="expenses_container" id="expenses_container">
+                    <!--div class="expense" >
+                        <p>event</p>
+                        <p>price</p>
+                    </div-->   
+                </div>
+                <div class="pagination" id="pagination">
+                    <button id="prev">prev</button>
+                    <button id="next">next</button>
+                    <input type="hidden" value="0" name="curr_page" id="curr_page">
+                </div>
+            </div>
+            <div class="leadership_board">
+                <div class="leadership_header">Leadership Board</div>
+                <div class="leadership_container" id="leadership_container">
+                    <!--div class="members">
+                        <p>name</p>
+                        <p>rank</p>
+                    </div-->
+                </div>
+            </div>
+        </div>
+
+        <!-- adding daily expenses -->        
+        <div class="adding_expenses" id="adding_expenses">
+            <div class="add_expenses">
+                <form action="">
+                    <div class="input_fields">
+                        <div class="input_div">
+                            <div>
+                                <label for="event">Event</label>
+                                <input type="text" id="event" name="event">
+                            </div>
+                            <div>
+                                <label for="price">Price</label>
+                                <input type="text" id="price" name="price">
+                            </div>  
+                        </div>
+
+                        <div>
+                            <label for="event_type">Type</label>
+                            <select id="event_type" name="event_type">
+                                <option value="Expense">Expense</option>
+                                <option value="Income">Income</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="div1">
+                        <button type="submit" id="add_expenses_btn">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>  
+
+        <!-- view all expenses-->
+        <div class="view_all_expenses_container" id="view_all_expenses_container">
+
+            <!-- showing all previous downloaded files -->
+            <div class="files_container">
+                <h2>YOUR PREVIOUS FILES</h2>
+                <ul class="list_of_files" id="list_of_files">
+                    <!--li>jani<button type="button" id="1" class="this_file_download">download </button></li-->
+                    
+                </ul>
+            </div>
+
+            <div class="view_all_expenses" id="view_all_expenses">
+                <!-- showing all expenses in table -->
+                <div class="view_inner_conatiner">
+                    <h2>DAY TO DAY EXPENSES</h2>
+                    <h4>Daily Report</h4>
+                    <div class="daily_expense_container">
+                        <table id="daily_exp_table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Income</th>
+                                <th>Expense</th>
+                            </tr>
+                            <!--tr id="daily_exp_row">
+                                <td>2022-09-22</td>
+                                <td>food</td>
+                                <td></td>
+                                <td>200</td>
+                            </tr-->
+                            
+                        </table>
+                    </div>
+                    <h4>Monthly Report</h4>
+                    <div class="monthly_expense_container">
+                        <table id="monthly_exp_table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Income</th>
+                                <th>Expense</th>
+                                <th>Balance</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <h4>Yearly Report</h4>
+                    <div class="yearly_expense_container">
+                        <table id="yearly_exp_table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Income</th>
+                                <th>Expense</th>
+                                <th>Balance</th>
+                            </tr>
+                           
+                        </table>
+                    </div>
+                    <div class="download_btn" >
+                        <button type="button" id="download_btn">download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+       
+
+        
+
+    </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

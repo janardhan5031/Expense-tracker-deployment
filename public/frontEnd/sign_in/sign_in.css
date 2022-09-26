@@ -1,0 +1,347 @@
+
+body{
+    top: 0;bottom: 0;right: 0;left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* sign in container */
+.sign_in_container{
+    position: relative;
+    top: 5rem;
+    box-shadow: 1px 1.5px 8px white;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 2rem;
+    width: 50%;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+.sign_in_container.active{
+    display: flex;
+}
+.inner_div{
+    width: 65%;
+}
+input{
+    height: 0.8rem;
+    outline-style: none;
+}
+#sign_in, .container2 *,#forget_pswd{
+    cursor: pointer;
+    background-color: rebeccapurple;
+    border-radius: 2px;
+    height: 1.5rem;
+    color:white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+.email_container,.password_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sign_in_btn,.container1{
+    display: flex;
+    justify-content: center;
+}
+.container2{
+    display: flex;
+    justify-content: space-between;
+}
+.container2 *{
+    padding: 3px 6px;
+}
+
+/* forget password container */
+.forget_pswd_container.active{
+display: flex;
+}
+.forget_pswd_container{
+    position: relative;
+    top: 5rem;
+    box-shadow: 1px 1.5px 8px white;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-radius: 2rem;
+    width: 50%;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+.forget_pswd_container form{
+    margin-bottom: 2rem;
+}
+
+/* profile container */
+.profile_container .active .premium{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.profile_container{
+    position: absolute;
+    top: 0;right: 0;left: 0;
+    min-height: 110%
+}
+.profile_container.active{
+    display: none;}
+header{
+    margin:0;
+    height: 4rem;
+    background-color: rebeccapurple;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.expense_tracker{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.expense_tracker button{
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+.expense_tracker button.active{
+    border-bottom: 1px solid white;
+}
+.main_header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_header p{
+    margin: 0;  padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+.profile{
+   position: relative;
+   right: 1rem;
+   padding: 0;margin:0;
+}
+
+.profile_pic,img{
+    width: 40px;
+    height:40px;
+    margin: 0 2rem;
+    padding: 0;margin: 0;
+}
+img{
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+/* daily expenses */
+.expenses_main_container.active{
+    position: relative;
+    left: 0; right: 0; 
+    /*border: 1px solid red;*/
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+ 
+}
+.expenses_main_container{
+    display: none;
+}
+.daily_expenses_container , .leadership_board{
+    background-color: white;
+    width: 48%;
+    border: 1px solid aqua;
+    border-radius: 2rem;
+}
+.expenses_header,.leadership_header{
+    /*background-color: aqua;*/
+    background: aqua;
+    border-bottom: 1px solid aqua;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    font-size: large;
+}
+.expenses_container, .leadership_container{
+    margin: 1rem 0;
+}
+.expense, .members{
+    /*border: 1px solid red ;   */
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem ;
+    margin-bottom: 0;
+}
+.expense p,.members p{
+    margin: 0;
+    padding: 0;
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+.pagination *{ 
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+
+/* adding expenses */
+.adding_expenses.active{
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid red;*/
+    display: flex;
+    justify-content: center;
+}
+.adding_expenses{
+    display: none;
+}
+.add_expenses{
+    margin-top: 5rem;
+    width: 60%;
+    height: 50%;
+    border: 1px solid rebeccapurple;
+    padding: 0.5rem 1rem;
+}
+.add_expenses form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+input,select{
+    width: 100% ;
+    height: 1.5rem;
+    font-size: large;
+}
+form .input_fields{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.input_div{
+    width: 50%;
+    margin: 0.5rem 1rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.input_div div{
+    margin: 1rem 0;
+}
+.add_expenses form .div1{
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+.div1 button{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 20%;
+    font: medium;
+}
+
+
+
+/* view all expenses */
+.view_all_expenses_container{
+    display: none;
+    width:100%;
+}
+.view_all_expenses_container.active{
+    display: flex;
+    flex-direction: column;
+}
+.files_container{
+    min-height: 6rem;
+}
+.files_container h2{
+    text-align: center;
+}
+.files_container li{
+    margin: 1rem 2rem 1rem 0;
+}
+.files_container button{
+    margin: 0 2rem;
+}
+
+.view_all_expenses, .files_container{
+    width: 96%;
+    margin:2% ;
+    background-color: white;
+}
+
+#download_btn:disabled {
+    cursor: none;
+}
+
+.download_btn{
+    position: fixed;
+    top:88%;
+    right: 3rem;
+}
+.download_btn button{
+    height: 3rem;
+    border-radius: 1.5rem;
+    color: white;
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+.view_inner_conatiner{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.view_inner_conatiner h3{
+    margin-bottom: 0;
+    
+}
+.daily_expense_container,.monthly_expense_container,.yearly_expense_container{
+    background-color: white;
+    width: 100%;
+    min-height: 8rem;
+}
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    background-color: royalblue;
+    color: white;
+}
+th,td{
+    border: 1px solid royalblue;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
