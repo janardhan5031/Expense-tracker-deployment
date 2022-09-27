@@ -17,7 +17,7 @@ sign_in.addEventListener('click', (e) =>{
     
     if(email && password){
         //console.log(obj)
-        axios.post(`http://localhost:4000/sign-in`,obj)   // if we try to send the obj through get, we need to stringify that obj. then only we can parse that object and use it.
+        axios.post(`http://65.2.30.248/sign-in`,obj)   // if we try to send the obj through get, we need to stringify that obj. then only we can parse that object and use it.
         .then(result =>{
             if(result.data.msg && result.status ===201){
                 //console.log(result);
@@ -141,7 +141,7 @@ function getAllPreviousFiles(){
     const token = localStorage.getItem('token');
 
     
-    axios.get(`http://localhost:4000/files/getAllFiles`,{headers:{"authorization":token}})
+    axios.get(`http://65.2.30.248/files/getAllFiles`,{headers:{"authorization":token}})
     .then(result=>{
         //console.log(result);
 
@@ -173,7 +173,7 @@ function getAllPreviousFiles(){
 function getAllExpenses(){
     const token = localStorage.getItem('token');
 
-    axios.get('http://localhost:4000/expenses/getAllExpenses',{headers:{"authorization":token}})
+    axios.get('http://65.2.30.248/expenses/getAllExpenses',{headers:{"authorization":token}})
     .then(result =>{
         console.log(result)
         if(result.data.length>0){
@@ -287,7 +287,7 @@ document.getElementById('list_of_files').addEventListener('click',(event)=>{
     if(event.target.className==='this_file_download'){
         const token = localStorage.getItem('token');
         const fileId = event.target.id;
-        axios.get(`http://localhost:4000/files/getOneFile/${fileId}`,{headers:{"authorization":token}})
+        axios.get(`http://65.2.30.248/files/getOneFile/${fileId}`,{headers:{"authorization":token}})
         .then(result =>{    
             //console.log(result);
             if(result.status === 200){
@@ -306,7 +306,7 @@ document.getElementById('list_of_files').addEventListener('click',(event)=>{
 // downoading all expenses by clicking on download btn
 document.getElementById('download_btn').addEventListener('click',()=>{
     const token = localStorage.getItem('token');
-    axios.get(`http://localhost:4000/expenses/download`,{headers:{"authorization":token}})
+    axios.get(`http://65.2.30.248/expenses/download`,{headers:{"authorization":token}})
     .then(result =>{    
         if(result.status === 200){
             var a = document.createElement('a');
@@ -325,7 +325,7 @@ function forgetPassword(){
     document.getElementById('forget_pswd').addEventListener('click',(e)=>{
         e.preventDefault();
         const email = document.getElementById('rcvry_email').value;
-        axios.post('http://localhost:4000/password/forgetpassword',{email:email})
+        axios.post('http://65.2.30.248/password/forgetpassword',{email:email})
         .then((result)=>{
             //console.log(result)
             window.alert(result.data.msg);
@@ -351,7 +351,7 @@ function display_daily_expenses(){
     const token = localStorage.getItem('token');
 
     function expense(page_num){
-        axios.get('http://localhost:4000/expenses/get-all?page=0',{headers:{"authorization":token}})
+        axios.get('http://65.2.30.248/expenses/get-all?page=0',{headers:{"authorization":token}})
         .then((res)=>{
             //console.log(res);
             const list = res.data.data;
@@ -407,7 +407,7 @@ function display_daily_expenses(){
             const curr_page = Number(document.getElementById('curr_page').value);
 
             // calling backend for previous page, if prev btn is active 
-            axios.get(`http://localhost:4000/expenses/get-all?page=${curr_page-1}`,{headers:{"authorization":token}})
+            axios.get(`http://65.2.30.248/expenses/get-all?page=${curr_page-1}`,{headers:{"authorization":token}})
             .then((res)=>{
                 adding_to_page(res.data.data);
                 prev.disabled=!res.data.prev;
@@ -425,7 +425,7 @@ function display_daily_expenses(){
 
             const curr_page = Number(document.getElementById('curr_page').value);
 
-            axios.get(`http://localhost:4000/expenses/get-all?page=${curr_page+1}`,{headers:{"authorization":token}})
+            axios.get(`http://65.2.30.248/expenses/get-all?page=${curr_page+1}`,{headers:{"authorization":token}})
             .then((res)=>{
                 adding_to_page(res.data.data);
                 prev.disabled=!res.data.prev;
@@ -444,7 +444,7 @@ function display_leadership_board(){
     const leadership_container = document.getElementById('leadership_container');
     leadership_container.innerHTML='';
     const token = localStorage.getItem('token');
-    axios.get('http://localhost:4000/getLeadership',{headers:{"authorization":token}})
+    axios.get('http://65.2.30.248/getLeadership',{headers:{"authorization":token}})
     .then((result)=>{
         //console.log(result);
         const length = result.data.data.length;
@@ -488,7 +488,7 @@ all_users.addEventListener('click',(event)=>{
 
     //get the selected user expense from backend
     const token = localStorage.getItem('token');
-    axios.get(`http://localhost:4000/get_user/${target_ele}`,{headers:{"authorization":token}})
+    axios.get(`http://65.2.30.248/get_user/${target_ele}`,{headers:{"authorization":token}})
     .then(result =>{
         //console.log(result)
         expense_ele.innerText=result.data.expense;
@@ -519,7 +519,7 @@ document.getElementById('add_expenses_btn').addEventListener('click',(e)=>{
         const token = localStorage.getItem('token');
         console.log(token)
         // send this data to backend
-        axios.post(`http://localhost:4000/expenses/add`,obj,{headers:{"authorization":token} })
+        axios.post(`http://65.2.30.248/expenses/add`,obj,{headers:{"authorization":token} })
         .then(result =>{
             window.alert(result.data.msg)
         })
@@ -535,7 +535,7 @@ document.getElementById('add_expenses_btn').addEventListener('click',(e)=>{
 // delete expenses from server
 async function deleteExpense(id){
     const token = localStorage.getItem('token');
-    await axios.post(`http://localhost:4000/expenses/delete`,{id:id},{headers:{"authorization":token} })
+    await axios.post(`http://65.2.30.248/expenses/delete`,{id:id},{headers:{"authorization":token} })
     .then(result=>{
         //console.log(result);
         window.alert('successfully deleted the expense')
@@ -551,7 +551,7 @@ document.getElementById('pay_btn').onclick = async function(e){
     const token = localStorage.getItem('token');
     console.log(token);
     let response;
-    await axios.get(`http://localhost:4000/purchase/membership`,{headers:{"authorization":token}})
+    await axios.get(`http://65.2.30.248/purchase/membership`,{headers:{"authorization":token}})
     .then(res=> response=res)
     .catch(err => console.log(err));    
     console.log(response);
@@ -577,7 +577,7 @@ document.getElementById('pay_btn').onclick = async function(e){
             alert(pymnt_success.razorpay_signature);
 
             // posting the payment id in server
-            axios.post('http://localhost:4000/purchase/membershipStatus',{
+            axios.post('http://65.2.30.248/purchase/membershipStatus',{
                 orderId:options.order_id,
                 payment_id: pymnt_success.razorpay_payment_id
             },{
